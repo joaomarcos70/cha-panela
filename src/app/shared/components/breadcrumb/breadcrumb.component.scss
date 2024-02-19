@@ -1,0 +1,17 @@
+.breadcrumb{
+    ul{
+        display: flex;
+        flex-direction: row;
+
+        li:not(.concat){
+            padding: 0px 8px;
+            font-size: 14px;
+            color: #000000;
+        }
+
+        a{
+            color: rgba(0, 0, 0, 0.45);
+        }
+
+    }
+}

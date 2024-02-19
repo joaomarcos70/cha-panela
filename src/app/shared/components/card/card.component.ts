@@ -2,6 +2,7 @@ import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { NzCardModule } from 'ng-zorro-antd/card';
 import { CurrencyPipe } from '@angular/common';
+import { BreadCrumbService } from '../../../services/breadcrumb.service';
 
 @Component({
   selector: 'app-card',
@@ -11,7 +12,10 @@ import { CurrencyPipe } from '@angular/common';
   styleUrl: './card.component.scss',
 })
 export class CardComponent {
-  constructor(private router: Router) {}
+  constructor(
+    private router: Router,
+    private breadcrumbService: BreadCrumbService
+  ) {}
   @Input() id: string = '';
   @Input() name: string = '';
   @Input() category: string = '';
@@ -22,7 +26,10 @@ export class CardComponent {
 
   buy(id: string) {
     console.log(id);
+    this.breadcrumbService.setBreadCrumbs({
+      label: 'Presente',
+      url: `/presente/${id}`,
+    });
     this.router.navigate([`/presente`, id]);
-    //window.open(this.link, '_blank');
   }
 }

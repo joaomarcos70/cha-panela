@@ -17,7 +17,14 @@ export class BreadCrumbService {
 
   setBreadCrumbs(breadCrumbs: BreadCrumb) {
     const currentBreadCrumbs = this.breadCrumbs.getValue();
-    currentBreadCrumbs.push(breadCrumbs);
-    this.breadCrumbs.next(currentBreadCrumbs);
+    const existingIndex = currentBreadCrumbs.findIndex(
+      (bc) => bc.url === breadCrumbs.url
+    );
+    if (existingIndex !== -1) {
+      const newBreadCrumbs = currentBreadCrumbs.slice(0, existingIndex + 1);
+      this.breadCrumbs.next(newBreadCrumbs);
+    } else {
+      this.breadCrumbs.next([...currentBreadCrumbs, breadCrumbs]);
+    }
   }
 }

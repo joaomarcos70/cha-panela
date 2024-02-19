@@ -3,14 +3,16 @@
         <ul>
             @for (item of items; track item; let last = $last) {
             @if (!last) {
-            <li>
-                <a [routerLink]="item.url">{{ item.label }}</a>
+            <li (click)="navigateTo(item.url)">
+                <a>{{ item.label }}</a>
             </li>
             }
             @if (last) {
-            <span>{{ item.label }}</span>
+            <li>{{ item.label }}</li>
             }
-            <span> / </span>
+            @if (!last) {
+            <li class="concat"> / </li>
+            }
             }
         </ul>
     </ng-container>

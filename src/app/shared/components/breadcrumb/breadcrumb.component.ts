@@ -3,7 +3,7 @@ import {
   BreadCrumb,
   BreadCrumbService,
 } from '../../../services/breadcrumb.service';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-breadcrumb',
@@ -14,9 +14,18 @@ import { RouterModule } from '@angular/router';
 })
 export class BreadcrumbComponent {
   items: BreadCrumb[] = [];
-  constructor(private breadcrumbService: BreadCrumbService) {
+  constructor(
+    private breadcrumbService: BreadCrumbService,
+    private router: Router,
+    private breadCrumbService: BreadCrumbService
+  ) {
     this.breadcrumbService.breadCrumbs$.subscribe((breadCrumbs) => {
       this.items = breadCrumbs;
     });
+  }
+
+  navigateTo(url: string) {
+    this.breadCrumbService.setBreadCrumbs({ label: 'Home', url: '/' });
+    this.router.navigate([url]);
   }
 }
