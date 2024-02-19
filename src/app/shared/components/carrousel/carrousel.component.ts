@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { CardComponent } from '../card/card.component';
 import { DocumentData } from 'firebase/firestore';
 import { IGift } from '../../interfaces/gift.interface';

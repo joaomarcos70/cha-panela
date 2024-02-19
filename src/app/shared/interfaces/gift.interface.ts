@@ -5,4 +5,5 @@ export interface IGift {
   img: string;
   link: string;
   buyed: boolean;
+  value: number;
 }
