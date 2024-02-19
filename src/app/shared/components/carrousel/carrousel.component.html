@@ -1,1 +1,8 @@
-<p>carrousel works!</p>
+<div class="carrousel">
+    @for (item of items; track item) {
+    <div class="carrousel-item">
+        <app-card [name]="item.name" [category]="item.category" [buyed]="item.buyed" [img]="item.img"
+            [link]="item.link"></app-card>
+    </div>
+    }
+</div>

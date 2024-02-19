@@ -1,0 +1,19 @@
+.carrousel{
+    margin: 32px 0px;
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    scroll-snap-type: x mandatory;
+    gap: 20px;
+    
+    .carrousel-item{
+        flex: 0 0 auto;
+        scroll-snap-align: center;
+        width: 268px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}

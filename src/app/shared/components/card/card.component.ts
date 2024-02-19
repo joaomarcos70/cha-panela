@@ -10,8 +10,10 @@ import { NzCardModule } from 'ng-zorro-antd/card';
   styleUrl: './card.component.scss',
 })
 export class CardComponent {
-  @Input() title: string = '';
-  @Input() description: string = '';
-  @Input() image: string = '';
-  @Input() url: string = '';
+  @Input() name: string = '';
+  @Input() category: string = '';
+  @Input() value: number = 0;
+  @Input() img: string = '';
+  @Input() link: string = '';
+  @Input() buyed: boolean = false;
 }

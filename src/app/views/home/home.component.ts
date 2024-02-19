@@ -1,22 +1,26 @@
 import { Component } from '@angular/core';
-import { CardComponent } from '../../shared/components/card/card.component';
 import { GiftService } from '../../services/gifts.service';
-import { DocumentData } from 'firebase/firestore';
+import { CardComponent } from '../../shared/components/card/card.component';
+import { CarrouselComponent } from '../../shared/components/carrousel/carrousel.component';
+import { IGift } from '../../shared/interfaces/gift.interface';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CardComponent],
+  imports: [CardComponent, CarrouselComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
 })
 export class HomeComponent {
-  gifts: DocumentData[] = [];
+  gifts: IGift[] = [];
+  loading: boolean = true;
 
   constructor(private giftService: GiftService) {}
 
   async ngOnInit() {
-    this.gifts = await this.giftService.getGifts();
-    console.log('gifts', this.gifts);
+    await this.giftService.getGifts().then((gifts) => {
+      this.gifts = gifts;
+      this.loading = false;
+    });
   }
 }
