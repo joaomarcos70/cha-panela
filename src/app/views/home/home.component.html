@@ -1,50 +1,53 @@
-<section class="cover">
-    <h3 class="title">
-        Lista de presentes
-    </h3>
-    <p>Preparamos uma lista de itens que sonhamos em ter em nossa casa. Confira abaixo:</p>
-</section>
+<div class="container">
+    <section class="cover">
+        <h3 class="title">
+            Lista de presentes
+        </h3>
+        <p>Preparamos uma lista de itens que sonhamos em ter em nossa casa. Confira abaixo:</p>
+    </section>
 
-@if (paraServirCategory.length && !loading) {
-<section>
-    <h3 class="subtitle">
-        Para servir
-    </h3>
-    <app-carrousel [items]="paraServirCategory" />
-</section>
-}
+    @if (paraServirCategory.length && !loading) {
+    <section>
+        <h3 class="subtitle">
+            Para servir
+        </h3>
+        <app-carrousel [items]="paraServirCategory" />
+    </section>
+    }
 
-@if (cozinhaCategory.length && !loading) {
-<section>
-    <h3 class="subtitle">
-        Para cozinharmos juntos
-    </h3>
-    <app-carrousel [items]="cozinhaCategory" />
-</section>
-}
+    @if (cozinhaCategory.length && !loading) {
+    <section>
+        <h3 class="subtitle">
+            Para cozinharmos juntos
+        </h3>
+        <app-carrousel [items]="cozinhaCategory" />
+    </section>
+    }
 
-@if(sonoCategory.length && !loading) {
-<section>
-    <h3 class="subtitle">
-        Para uma boa noite de sono
-    </h3>
-    <app-carrousel [items]="gifts" />
-</section>
-}
+    @if(sonoCategory.length && !loading) {
+    <section>
+        <h3 class="subtitle">
+            Para uma boa noite de sono
+        </h3>
+        <app-carrousel [items]="gifts" />
+    </section>
+    }
 
-@if(banheiroCategory.length && !loading) {
-<section>
-    <h3 class="subtitle">
-        Para nosso banheiro </h3>
-    <app-carrousel [items]="banheiroCategory" />
-</section>
-}
+    @if(banheiroCategory.length && !loading) {
+    <section>
+        <h3 class="subtitle">
+            Para nosso banheiro </h3>
+        <app-carrousel [items]="banheiroCategory" />
+    </section>
+    }
 
-@if (othersCategory.length && !loading) {
-<section>
-    <h3 class="subtitle">
-        Outros itens que amamos
-    </h3>
-    <app-carrousel [items]="othersCategory" />
-</section>
-}
+    @if (othersCategory.length && !loading) {
+    <section>
+        <h3 class="subtitle">
+            Outros itens que amamos
+        </h3>
+        <app-carrousel [items]="othersCategory" />
+    </section>
+    }
+
+</div>
