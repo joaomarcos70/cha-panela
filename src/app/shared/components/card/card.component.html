@@ -1,10 +1,9 @@
 <nz-card style="width:268px" [nzCover]="coverTemplate">
-    <nz-card-meta nzTitle="{{name}}" nzDescription="{{value}}">
+    <nz-card-meta nzTitle="{{name}}" nzDescription="{{value | currency: 'BRL' }}">
     </nz-card-meta>
-    <button>Comprar</button>
+    <button (click)="buy()">Comprar</button>
 </nz-card>
 
 <ng-template #coverTemplate>
-    <img alt="example"
-        src="https://cdn.vnda.com.br/casacaso/2023/06/06/14_15_08_557_ce931adddf63bcbf31f06f6df440d10f.jpeg?v=1686071708" />
+    <img alt="example" src="{{img}}" />
 </ng-template>

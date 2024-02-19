@@ -13,14 +13,47 @@ import { IGift } from '../../shared/interfaces/gift.interface';
 })
 export class HomeComponent {
   gifts: IGift[] = [];
+
+  paraServirCategory: IGift[] = [];
+  cozinhaCategory: IGift[] = [];
+  banheiroCategory: IGift[] = [];
+  sonoCategory: IGift[] = [];
+  othersCategory: IGift[] = [];
+
   loading: boolean = true;
 
   constructor(private giftService: GiftService) {}
 
   async ngOnInit() {
-    await this.giftService.getGifts().then((gifts) => {
-      this.gifts = gifts;
-      this.loading = false;
+    try {
+      await this.giftService
+        .getGifts()
+        .then((gifts) => {
+          this.gifts = gifts;
+          this.distributeGifts();
+        })
+        .finally(() => {
+          this.loading = false;
+        });
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
+  distributeGifts() {
+    const categoryMap: { [key: string]: IGift[] } = {
+      para_servir: this.paraServirCategory,
+      cozinha: this.cozinhaCategory,
+      sono: this.banheiroCategory,
+      banheiro: this.sonoCategory,
+    };
+
+    this.gifts.forEach((gift) => {
+      if (categoryMap[gift.category]) {
+        categoryMap[gift.category].push(gift);
+      } else {
+        this.othersCategory.push(gift);
+      }
     });
   }
 }
