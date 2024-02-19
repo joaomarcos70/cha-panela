@@ -1,5 +1,6 @@
 import { Routes } from '@angular/router';
 import { HomeComponent } from './views/home/home.component';
+import { ContextGiftComponent } from './views/context-gift/context-gift.component';
 
 export const routes: Routes = [
   {
@@ -13,6 +14,6 @@ export const routes: Routes = [
   },
   {
     path: 'presente/:id',
-    component: HomeComponent,
+    component: ContextGiftComponent,
   },
 ];

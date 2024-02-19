@@ -9,7 +9,15 @@ export class GiftService {
   async getGifts() {
     const gifts = collection(this.db, 'gifts');
     const giftsSnapshot = await getDocs(gifts);
-    const giftsList = giftsSnapshot.docs.map((doc) => doc.data() as IGift);
+    const giftsList = giftsSnapshot.docs.map((doc) => {
+      const data = doc.data();
+      const id = doc.id;
+      return {
+        id,
+        ...data,
+      } as IGift;
+    });
+    console.log(giftsList);
     return giftsList;
   }
 }

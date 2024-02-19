@@ -12,6 +12,7 @@ import { CurrencyPipe } from '@angular/common';
 })
 export class CardComponent {
   constructor(private router: Router) {}
+  @Input() id: string = '';
   @Input() name: string = '';
   @Input() category: string = '';
   @Input() value: number = 0;
@@ -19,8 +20,9 @@ export class CardComponent {
   @Input() link: string = '';
   @Input() buyed: boolean = false;
 
-  buy() {
-    this.router.navigate(['/teste']);
-    window.open(this.link, '_blank');
+  buy(id: string) {
+    console.log(id);
+    this.router.navigate([`/presente`, id]);
+    //window.open(this.link, '_blank');
   }
 }
