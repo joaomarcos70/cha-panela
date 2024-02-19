@@ -5,3 +5,54 @@
 *{
     font-family: 'Roboto', sans-serif;
 }
+
+*, *:before, *:after {
+    box-sizing: inherit;
+  }
+  
+  body, h1, h2, h3, h4, h5, h6, p, ol, ul {
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+  }
+  
+  ol, ul {
+    list-style: none;
+  }
+  
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+
+h3.title{
+    color: #000000;
+    font-family: 'Roboto Flex', sans-serif;
+    font-size: 38px;
+    font-weight: 700;
+    margin: 20px;
+}
+
+h4.medium-title{
+    color: #000000;
+    font-size: 28px;
+    font-weight: 700;
+    margin: 20px;
+    line-height: 32px;
+}
+
+h3.subtitle{
+    color: #000000;
+    font-size: 24px;
+    font-weight: 500;
+    margin: 20px;
+}
+
+p{
+    color: #000000;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    margin: 20px;
+}

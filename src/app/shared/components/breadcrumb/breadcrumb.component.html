@@ -1,0 +1,17 @@
+<div class="breadcrumb">
+    <ng-container>
+        <ul>
+            @for (item of items; track item; let last = $last) {
+            @if (!last) {
+            <li>
+                <a [routerLink]="item.url">{{ item.label }}</a>
+            </li>
+            }
+            @if (last) {
+            <span>{{ item.label }}</span>
+            }
+            <span> / </span>
+            }
+        </ul>
+    </ng-container>
+</div>

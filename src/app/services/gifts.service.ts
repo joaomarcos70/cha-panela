@@ -1,5 +1,11 @@
 import { Injectable } from '@angular/core';
-import { collection, getFirestore, getDocs } from 'firebase/firestore';
+import {
+  collection,
+  getFirestore,
+  getDocs,
+  doc,
+  getDoc,
+} from 'firebase/firestore';
 import { IGift } from '../shared/interfaces/gift.interface';
 
 @Injectable({ providedIn: 'root' })
@@ -19,5 +25,15 @@ export class GiftService {
     });
     console.log(giftsList);
     return giftsList;
+  }
+
+  async getGift(id: string) {
+    const gift = doc(this.db, 'gifts', id);
+    if (!gift) {
+      return null;
+    }
+    const giftSnapshot = await getDoc(gift); // Change getDocs to getDoc
+    const giftData = giftSnapshot.data();
+    return giftData;
   }
 }
