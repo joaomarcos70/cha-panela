@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: cha-panela
+    env: static
+    buildCommand: ng build --prod
+    staticPublishPath: ./dist/cha-panela
+    routes:
+      - type: rewrite
+        source: /**
+        destination: /index.html
