@@ -24,12 +24,21 @@
     </section>
     }
 
+    @if(decorCategory.length && !loading) {
+    <section>
+        <h3 class="subtitle">
+            Para nossa decoração
+        </h3>
+        <app-carrousel [items]="decorCategory" />
+    </section>
+    }
+
     @if(sonoCategory.length && !loading) {
     <section>
         <h3 class="subtitle">
             Para uma boa noite de sono
         </h3>
-        <app-carrousel [items]="gifts" />
+        <app-carrousel [items]="sonoCategory" />
     </section>
     }
 

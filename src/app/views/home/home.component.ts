@@ -17,6 +17,7 @@ export class HomeComponent {
   paraServirCategory: IGift[] = [];
   cozinhaCategory: IGift[] = [];
   banheiroCategory: IGift[] = [];
+  decorCategory: IGift[] = [];
   sonoCategory: IGift[] = [];
   othersCategory: IGift[] = [];
 
@@ -44,8 +45,9 @@ export class HomeComponent {
     const categoryMap: { [key: string]: IGift[] } = {
       para_servir: this.paraServirCategory,
       cozinha: this.cozinhaCategory,
-      sono: this.banheiroCategory,
-      banheiro: this.sonoCategory,
+      decor: this.decorCategory,
+      sono: this.sonoCategory,
+      banheiro: this.banheiroCategory,
     };
 
     this.gifts.forEach((gift) => {

@@ -9,7 +9,12 @@
     }
 
     .ant-card-cover{
+        display: flex;
+        justify-content: center;
+        align-items: center;
         img{
+            height: 266px;
+            width: auto;
             border-radius: 12px;
         }
     }
