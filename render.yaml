@@ -6,5 +6,5 @@ services:
     staticPublishPath: ./dist/cha-panela
     routes:
       - type: rewrite
-        source: /**
+        source: /*
         destination: /index.html
