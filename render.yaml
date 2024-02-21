@@ -3,7 +3,7 @@ services:
     name: cha-panela
     env: static
     buildCommand: ng build --prod
-    staticPublishPath: ./dist/cha-panela
+    staticPublishPath: ./dist/cha-panela/browser
     routes:
       - type: rewrite
         source: /*
