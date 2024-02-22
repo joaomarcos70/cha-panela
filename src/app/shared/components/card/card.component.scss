@@ -15,7 +15,7 @@
         img{
             height: 266px;
             width: auto;
-            border-radius: 12px;
+            border-radius: 12px 12px 0px 0px;
         }
     }
     
@@ -43,9 +43,19 @@
         font-size: 16px;
         font-weight: 400;
     }
-
+    
     .ant-card-meta-description{
         font-size: 14px;
         font-weight: 400;
+    }
+    
+    .ant-card-meta-detail .ant-card-meta-title{
+        display: -webkit-box;
+        min-height: 75px;
+        max-height: 75px;
+        white-space: normal;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        text-overflow: ellipsis;
     }
 }
