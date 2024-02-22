@@ -1,7 +1,22 @@
-<h4 class="medium-title">
-    Você finalizou a compra no site da loja?
-</h4>
+<div class="container">
+    <h4 class="medium-title">
+        Finalize a compra no site da loja</h4>
+    
+    <div class="link">
+        <div class="img-container">
+            <img [src]="gift.img" alt="foto do presente" />
+        </div>
+        <a [href]="gift.link" target="_blank">{{gift.name}}</a>
+    </div>
+    
+    <h4 class="subtitle">
+        Prefere enviar pra nossa casa?
+    </h4>
+    <ul>
+        <li>CEP: 11015-230</li>
+        <li>Rua Guedes Coelho, 78</li>
+        <li>Apartamento 93</li>
+        <li>Encruzilhada, Santos - SP</li>
+    </ul>
 
-<p>
-    Ao marcar como comprado, esse item ficará indisponivel para outras pessoas.
-</p>
+</div>

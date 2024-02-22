@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { GiftService } from '../../services/gifts.service';
+import { IGift } from '../../shared/interfaces/gift.interface';
 
 @Component({
   selector: 'app-context-gift',
@@ -11,6 +12,8 @@ import { GiftService } from '../../services/gifts.service';
 })
 export class ContextGiftComponent implements OnInit {
   id = '';
+  gift: IGift = {} as IGift;
+  loading = true;
   constructor(
     private activatedRoute: ActivatedRoute,
     private giftService: GiftService
@@ -21,8 +24,12 @@ export class ContextGiftComponent implements OnInit {
       this.id = params['id'];
     });
 
-    this.giftService.getGift(this.id).then((gift) => {
-      console.log(gift);
+    this.giftService.getGift(this.id)
+    .then((gift: IGift) => {
+      this.gift = gift;
+    })
+    .finally(() => {
+      this.loading = false;
     });
   }
 }

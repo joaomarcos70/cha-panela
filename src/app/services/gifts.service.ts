@@ -23,17 +23,13 @@ export class GiftService {
         ...data,
       } as IGift;
     });
-    console.log(giftsList);
     return giftsList;
   }
 
-  async getGift(id: string) {
+  async getGift(id: string):Promise<IGift> {
     const gift = doc(this.db, 'gifts', id);
-    if (!gift) {
-      return null;
-    }
-    const giftSnapshot = await getDoc(gift); // Change getDocs to getDoc
+    const giftSnapshot = await getDoc(gift);
     const giftData = giftSnapshot.data();
-    return giftData;
+    return giftData as IGift;
   }
 }

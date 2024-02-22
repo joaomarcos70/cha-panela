@@ -1,5 +1,5 @@
 <nz-card style="width:268px" [nzCover]="coverTemplate" (click)="buy(id)">
-    <nz-card-meta nzTitle="{{name}}" nzDescription="{{value | currency: 'BRL' }}">
+    <nz-card-meta nzTitle="{{name}}" nzDescription="{{value | currency: 'BRL':'symbol':'1.2-2':'pt-BR' }}">
     </nz-card-meta>
     <button (click)="buy(id)">Comprar</button>
 </nz-card>
